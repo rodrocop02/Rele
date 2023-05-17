@@ -1,0 +1,23 @@
+int potenciometro = 0;
+int rele = 5;
+
+void setup() {
+  pinMode(A0, INPUT);
+  pinMode(rele, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  potenciometro = analogRead(A0);
+  if(potenciometro <= 500){
+    digitalWrite(rele,HIGH);
+  }
+
+  else{
+    digitalWrite(rele,LOW);
+  }
+
+  Serial.println(potenciometro);
+  
+}
